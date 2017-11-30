@@ -21,6 +21,7 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
 
     private LinearLayout linerlayout;
     private String[] strings;
+//测试  测试   测试
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
