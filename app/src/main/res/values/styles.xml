@@ -6,6 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+       <item name="android:windowIsTranslucent">true</item> <!--透明背景-->
     </style>
 
+    <!--<style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar">-->
+        <!--<item name="android:windowIsTranslucent">true</item>  &lt;!&ndash; 透明背景 &ndash;&gt;-->
+    <!--</style>-->
 </resources>

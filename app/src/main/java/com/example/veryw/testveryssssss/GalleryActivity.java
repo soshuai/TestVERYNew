@@ -135,7 +135,7 @@ public class GalleryActivity extends BaseActivity {
             bd.setAntiAlias(true);		// 消除锯齿
 
             iv.setImageDrawable(bd);
-            Gallery.LayoutParams params = new Gallery.LayoutParams(200, 260);
+            Gallery.LayoutParams params = new Gallery.LayoutParams(160, 260);
             iv.setLayoutParams(params);
             return iv;
         }

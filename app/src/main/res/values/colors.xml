@@ -48,4 +48,10 @@
     <color name="new_search_stroke">#F2F2F2</color>
     <color name="new_search">#a3a3a3</color>
 
+
+
+
+    <color name="tab_text_color_selected">#ffffff</color>
+    <color name="tab_text_color_normal_day">#FBC5C6</color>
+
 </resources>
