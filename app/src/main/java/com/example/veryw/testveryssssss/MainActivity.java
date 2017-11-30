@@ -28,7 +28,7 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         /////////////////////
-//        setSwipeBackEnable(false);//禁掉左滑退出testest
+//        setSwipeBackEnable(false);//禁掉左滑退出
 
 
         initView();
