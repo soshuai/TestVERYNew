@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/interval_huge"
+    tools:context="com.example.veryw.testveryssssss.ViewsActivity">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/general_shape1"
+        android:text="十年生死两茫茫"
+        android:textSize="@dimen/text_size_huge" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/interval_default"
+        android:background="@drawable/general_shape2"
+        android:text="开始动画"
+        android:textSize="@dimen/text_size_huge" />
+
+    <com.example.veryw.testveryssssss.view.LineGridView
+        android:id="@+id/linegridview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/interval_default"
+        android:layout_marginRight="@dimen/interval_default"
+        android:layout_marginTop="@dimen/interval_default"
+        android:layout_weight="1"
+        android:numColumns="4" />
+
+</LinearLayout>

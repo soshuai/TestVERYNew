@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="interval_max_60">60dp</dimen>
+    <dimen name="interval_maxinum">40dp</dimen>
+    <dimen name="interval_great">30dp</dimen>
+    <dimen name="interval_huge">25dp</dimen>
+    <dimen name="interval_large">22dp</dimen>
+    <dimen name="interval_larger">18dp</dimen>
+    <dimen name="interval_default">15dp</dimen>
+    <dimen name="interval_smaller">12dp</dimen>
+    <dimen name="interval_small">8dp</dimen>
+    <dimen name="interval_tiny">5dp</dimen>
+    <dimen name="interval_mini">3dp</dimen>
+    <dimen name="interval_min_minus20">-20dp</dimen>
+
+
+    <!-- 字体大小 -->
+    <dimen name="text_size_huge">24dp</dimen>
+    <dimen name="text_size_large">20dp</dimen>
+    <dimen name="text_size_larger">17dp</dimen>
+    <dimen name="text_size_default">15dp</dimen>
+    <dimen name="text_size_smaller">13sp</dimen>
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_tinyer">8sp</dimen>
+    <dimen name="text_size_tiny">6sp</dimen>
+</resources>

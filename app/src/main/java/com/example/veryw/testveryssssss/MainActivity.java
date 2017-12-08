@@ -7,12 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.veryw.testveryssssss.adapter.MyAdapter;
 import com.example.veryw.testveryssssss.base.BaseActivity;
 
-import butterknife.BindView;
 
 
 public class MainActivity extends BaseActivity implements MyAdapter.RecyclerviewOnItemClickListenr {
@@ -86,6 +84,8 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
         strings[2] = "3D画廊";
         strings[3] = "鹰击长空";
         strings[4] = "viewpager";
+        strings[5] = "AR";
+        strings[6] = "自定义View";
         return strings;
     }
 
@@ -108,6 +108,14 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
                 Intent intent4 = new Intent(this, ViewPagerActivity.class);
                 startActivity(intent4);
                 break;
+            case 5:
+                Intent intent5 = new Intent(this, ARActivity.class);
+                startActivity(intent5);
+                break;
+            case 6:
+                Intent intent6 = new Intent(this, ViewsActivity.class);
+                startActivity(intent6);
+                break;
             default:
                 break;
         }
@@ -116,6 +124,10 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
 
     }
 
+    /**
+     *
+     * @param position
+     */
     private void toast(int position) {
         if (position == 0) {
             androidToast("呱呱呱。。。");

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1000">
+    <!--<alpha-->
+        <!--android:fromAlpha="0"-->
+        <!--android:toAlpha="1" />-->
+    <!--<scale-->
+        <!--android:fromXScale="0"-->
+        <!--android:fromYScale="0"-->
+        <!--android:toXScale="1"-->
+        <!--android:toYScale="1" />-->
+    <!--<translate-->
+        <!--android:fromXDelta="-1100"-->
+        <!--android:fromYDelta="0"-->
+        <!--android:toXDelta="0"-->
+        <!--android:toYDelta="0" />-->
+    <rotate
+        android:fromDegrees="90"
+        android:toDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%" />
+</set>
+
+    <!--alpha
+    渐变透明度动画效果
+    scale
+    渐变尺寸伸缩动画效果
+    translate
+    画面转换位置移动动画效果
+    rotate
+    画面转移旋转动画效果-->
+    <!--Interpolator 主要作用是可以控制动画的变化速率 ，就是动画进行的快慢节奏-->
+    <!--pivot 决定了当前动画执行的参考位置-->

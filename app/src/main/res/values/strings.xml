@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Demo合集</string>
+
+    <string name="ar_scan">扫一扫</string>
+    <string name="ar_gallery">AR看看</string>
+    <string name="ar_title">AR</string>
 </resources>
