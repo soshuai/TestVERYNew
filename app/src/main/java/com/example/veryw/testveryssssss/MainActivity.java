@@ -86,6 +86,7 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
         strings[4] = "viewpager";
         strings[5] = "AR";
         strings[6] = "自定义View";
+        strings[7] = "照相/相册";
         return strings;
     }
 
@@ -115,6 +116,10 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
             case 6:
                 Intent intent6 = new Intent(this, ViewsActivity.class);
                 startActivity(intent6);
+                break;
+            case 7:
+                Intent intent7 = new Intent(this, PhotoActivity.class);
+                startActivity(intent7);
                 break;
             default:
                 break;
