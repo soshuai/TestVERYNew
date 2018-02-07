@@ -6,10 +6,19 @@
     tools:context="com.example.veryw.testveryssssss.PhotoActivity">
 
     <Button
-        android:layout_centerInParent="true"
         android:id="@+id/photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="拍照/相册"
-         />
+        android:layout_centerInParent="true"
+        android:text="拍照/相册" />
+
+    <TextView
+        android:background="@color/red"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="jfalfj" />
 </RelativeLayout>

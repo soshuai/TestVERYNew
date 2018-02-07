@@ -20,7 +20,7 @@ import java.util.List;
 
 public class PullRecyclerViewGroup extends LinearLayout implements ViewTreeObserver.OnGlobalLayoutListener {
   //////////////////////////////////////////////////////////////////////////
-  //   veryw：
+  //   veryw：TODO
   //  这个有问题，一旦子控件不充满屏幕，子控件就接受不到点击事件
   //////////////////////////////////////////////////////////////////////////
 
@@ -126,9 +126,9 @@ public class PullRecyclerViewGroup extends LinearLayout implements ViewTreeObser
   
     @Override  
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (childView == null) {  
-            return super.dispatchTouchEvent(ev);  
-        }  
+        if (childView == null) {
+            return super.dispatchTouchEvent(ev);
+        }
 
         boolean isTouchOutOfScrollView = ev.getY() >= originalRect.bottom || ev.getY() <= originalRect.top; //如果当前view的Y上的位置
         if (isTouchOutOfScrollView) {//如果不在view的范围内
@@ -249,7 +249,7 @@ public class PullRecyclerViewGroup extends LinearLayout implements ViewTreeObser
         }
         return false ;
 
-    }  
+    }
   
   
     /** 

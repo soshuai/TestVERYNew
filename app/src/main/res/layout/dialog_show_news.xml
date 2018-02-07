@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_dialog"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/interval_small"
+        android:gravity="center"
+         android:textColor="@color/text_content"
+        />
+        <View
+               android:layout_width="fill_parent"
+               android:layout_height="1dp"
+               android:background="@color/lightgray"
+               android:layout_gravity="center"
+               />
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="15.7dp"
+        android:layout_marginTop="@dimen/interval_mini"
+        android:layout_marginBottom="@dimen/interval_mini"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        >
+       <TextView
+           android:id="@+id/tv_cancel"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="fill_parent"
+           android:text="忽 略"
+           android:textColor="@color/text_content"
+           android:gravity="center"
+           />
+           <View
+               android:layout_width="1dp"
+               android:layout_height="10dp"
+               android:background="@color/lightgray"
+               android:layout_gravity="center"
+               />
+           <TextView
+           android:id="@+id/tv_look"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="fill_parent"
+           android:text="查 看"
+           android:textColor="@color/text_content"
+           android:gravity="center"
+           />
+      </LinearLayout>
+
+</LinearLayout>

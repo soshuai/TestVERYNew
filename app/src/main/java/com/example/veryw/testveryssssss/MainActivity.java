@@ -19,19 +19,19 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
 
     private LinearLayout linerlayout;
     private String[] strings;
-//测试  测试   测试
+    //测试  测试   测试
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         /////////////////////
-//        setSwipeBackEnable(false);//禁掉左滑退出
+        //        setSwipeBackEnable(false);//禁掉左滑退出
 
 
         initView();
-//        m1(2);
-//        m1((Integer) 10);
+       //        m1(2);
+       //        m1((Integer) 10);
 
         Log.i("haiyangsb", "最终结果" + getNum());
     }
@@ -87,12 +87,17 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
         strings[5] = "AR";
         strings[6] = "自定义View";
         strings[7] = "照相/相册";
+        strings[8] = "PullToRefreshListView";
         return strings;
     }
 
     @Override
     public void onclickHaha(View view, int position) {
         switch (position) {
+            case 0:
+                Intent intent0 = new Intent(this, PushNewsDialog.class);
+                startActivity(intent0);
+                break;
             case 1:
                 Intent intent1 = new Intent(this, RotateActivity.class);
                 startActivity(intent1);
@@ -120,6 +125,10 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
             case 7:
                 Intent intent7 = new Intent(this, PhotoActivity.class);
                 startActivity(intent7);
+                break;
+            case 8:
+                Intent intent8 = new Intent(this, PulltoRefreshActivity.class);
+                startActivity(intent8);
                 break;
             default:
                 break;

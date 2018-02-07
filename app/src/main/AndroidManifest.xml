@@ -37,7 +37,11 @@
         <activity android:name=".GalleryActivity" />
         <activity android:name=".FlyEnterActivity" />
         <activity android:name=".FlyStartActivity" />
-        <activity android:name=".ViewPagerActivity" />
+        <activity android:name=".PushNewsDialog" />
+        <activity
+            android:name=".ViewPagerActivity"
+            android:configChanges="keyboard|orientation|screenSize"
+            android:screenOrientation="sensor" />
         <activity android:name=".ARActivity">
             <meta-data
                 android:name="HiAR_APPKEY"
@@ -47,8 +51,8 @@
                 android:value="d47d584becfd63978062041a5b14cc10" />
         </activity>
         <activity android:name=".ViewsActivity" />
-        <activity android:name=".PhotoActivity"></activity>
-
+        <activity android:name=".PhotoActivity" />
+        <activity android:name=".PulltoRefreshActivity"></activity>
     </application>
 
 </manifest>
