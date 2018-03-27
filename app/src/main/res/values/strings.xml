@@ -6,4 +6,12 @@
     <string name="ar_title">AR</string>
     <string name="img_from_album">手机相册</string>
     <string name="img_from_camera">手机拍照</string>
+
+
+    <string name="hello">Hello World, Activity07!</string>
+    <string name="toSearch">搜索</string>
+    <string name="info">系统SDCard目录文件路径：\n</string>
+    <string name="pleaseInput">请输入关键字!</string>
+    <string name="notFound">SD卡中没有相关文件!!</string>
+    <string name="pathError">读取路径出错!!</string>
 </resources>

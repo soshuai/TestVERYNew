@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/widget0"
+    >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_search"
+        android:layout_x="253px"
+        android:layout_y="5px"
+        android:text="@string/toSearch"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/key"
+        android:text="WiFi_V1R"
+
+
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="370px"
+        android:id="@+id/TextView_Result"
+        android:layout_x="0px"
+        android:layout_y="60px"
+        />
+</LinearLayout>

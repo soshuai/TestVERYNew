@@ -2,6 +2,7 @@ package com.example.veryw.testveryssssss;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,7 +11,17 @@ import android.widget.LinearLayout;
 
 import com.example.veryw.testveryssssss.adapter.MyAdapter;
 import com.example.veryw.testveryssssss.base.BaseActivity;
+import com.example.veryw.testveryssssss.ftp.bussiness.BussinessUtil;
+import com.example.veryw.testveryssssss.ftp.com.util.ConfigConst;
+import com.example.veryw.testveryssssss.ftp.com.util.IpUtil;
+import com.example.veryw.testveryssssss.ftp.run.GetWhiteListtask;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Logger;
 
 
 public class MainActivity extends BaseActivity implements MyAdapter.RecyclerviewOnItemClickListenr {
@@ -21,6 +32,8 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
     private String[] strings;
     //测试  测试   测试
 
+    private static final Logger logger = Logger.getLogger(String.valueOf(GetWhiteListtask.class));
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +43,34 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
 
 
         initView();
-       //        m1(2);
-       //        m1((Integer) 10);
+        //        m1(2);
+        //        m1((Integer) 10);
 
-        Log.i("haiyangsb", "最终结果" + getNum());
+//        Log.i("haiyangsb", "最终结果" + getNum());
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    String fileName = "hhh";
+                    FileInputStream fis = openFileInput(fileName);
+                    InputStreamReader isr = new InputStreamReader(fis, "utf-8");
+                    char input[] = new char[fis.available()];
+                    isr.read(input);
+                    isr.close();
+                    fis.close();
+                    String readed = new String(input);
+                    Log.i("vvvv", "读取内容：");
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+
     }
 
     /**
@@ -75,7 +112,7 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
     }
 
     public String[] getDataList() {
-        strings = new String[11];
+        strings = new String[12];
         for (int i = 0; i < strings.length; i++) {
             strings[i] = "我的第" + (i + 1) + "个Demo";
         }
@@ -88,6 +125,9 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
         strings[6] = "自定义View";
         strings[7] = "照相/相册";
         strings[8] = "PullToRefreshListView";
+        strings[9] = "文件读取/写入";
+        strings[10] = "ftp";
+        strings[11] = "查找手机文件";
         return strings;
     }
 
@@ -130,6 +170,38 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
                 Intent intent8 = new Intent(this, PulltoRefreshActivity.class);
                 startActivity(intent8);
                 break;
+            case 9:
+                Intent intent9 = new Intent(this, FileReadWriteActivity.class);
+                startActivity(intent9);
+                break;
+            case 10:
+                BussinessUtil bussinessUtil = BussinessUtil.getInstance();
+                try {
+                    ConfigConst.getConfigConst();
+                } catch (Exception e) {
+                    Log.i("mmmm", "错误打印==" + e.toString());
+                    e.printStackTrace();
+                }
+                logger.info("程序开始运行");
+                Thread r = new Thread(new GetWhiteListtask(bussinessUtil));
+                r.start();
+
+                boolean ipCheckFlag = false;
+                try {
+                    ipCheckFlag = bussinessUtil.checkIPwhitelist(IpUtil.ipToLong("111.62.90.254"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if (ipCheckFlag) {
+                    System.out.println("111.62.90.254在其中");
+                } else {
+                    System.out.println("111.62.90.254不在其中");
+                }
+                break;
+            case 11:
+                Intent intent10= new Intent(this, SearchFileActivity.class);
+                startActivity(intent10);
+                break;
             default:
                 break;
         }
@@ -139,7 +211,6 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
     }
 
     /**
-     *
      * @param position
      */
     private void toast(int position) {
@@ -155,12 +226,12 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i("ssss","onResume");
+        Log.i("ssss", "onResume");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.i("ssss","onRestart");
+        Log.i("ssss", "onRestart");
     }
 }
