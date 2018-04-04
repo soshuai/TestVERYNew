@@ -54,7 +54,8 @@
         <activity android:name=".PhotoActivity" />
         <activity android:name=".PulltoRefreshActivity" />
         <activity android:name=".FileReadWriteActivity" />
-        <activity android:name=".SearchFileActivity"></activity>
+        <activity android:name=".SearchFileActivity" />
+        <activity android:name=".GuolinListActivity"></activity>
     </application>
 
 </manifest>
