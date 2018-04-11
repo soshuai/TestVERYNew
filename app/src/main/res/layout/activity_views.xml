@@ -35,4 +35,11 @@
         android:layout_weight="1"
         android:numColumns="4" />
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="@dimen/interval_default"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/load" />
 </LinearLayout>

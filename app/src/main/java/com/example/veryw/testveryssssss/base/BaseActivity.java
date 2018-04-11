@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
 public class BaseActivity extends SwipeBackActivity {
-
+    protected BaseActivity      mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class BaseActivity extends SwipeBackActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         ///////////////////////////////////////
-
+        mContext=this;
         ButterKnife.bind(this);
     }
 

@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.example.veryw.testveryssssss.R;
 
 public class RefreshableView extends LinearLayout implements View.OnTouchListener {
@@ -35,7 +34,7 @@ public class RefreshableView extends LinearLayout implements View.OnTouchListene
      */  
     public static final int STATUS_REFRESHING = 2;  
   
-    /** 
+    /**
      * 刷新完成或未刷新状态 
      */  
     public static final int STATUS_REFRESH_FINISHED = 3;  
@@ -273,7 +272,11 @@ public class RefreshableView extends LinearLayout implements View.OnTouchListene
         mListener = listener;  
         mId = id;  
     }  
-  
+
+    public void setRefreshState(){
+        new RefreshingTask().execute();
+    }
+
     /** 
      * 当所有的刷新逻辑完成后，记录调用一下，否则你的ListView将一直处于正在刷新状态。 
      */  
@@ -405,8 +408,8 @@ public class RefreshableView extends LinearLayout implements View.OnTouchListene
     class RefreshingTask extends AsyncTask<Void, Integer, Void> {
   
         @Override  
-        protected Void doInBackground(Void... params) {  
-            int topMargin = headerLayoutParams.topMargin;  
+        protected Void doInBackground(Void... params) {
+            int topMargin = headerLayoutParams.topMargin;
             while (true) {  
                 topMargin = topMargin + SCROLL_SPEED;  
                 if (topMargin <= 0) {  
