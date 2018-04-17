@@ -112,7 +112,7 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
     }
 
     public String[] getDataList() {
-        strings = new String[13];
+        strings = new String[15];
         for (int i = 0; i < strings.length; i++) {
             strings[i] = "我的第" + (i + 1) + "个Demo";
         }
@@ -129,6 +129,8 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
         strings[10] = "ftp";
         strings[11] = "查找手机文件";
         strings[12] = "郭霖的下拉刷新";
+        strings[13] = "FeedList";
+        strings[14] = "BasicUsingActivity";
         return strings;
     }
 
@@ -200,12 +202,20 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
                 }
                 break;
             case 11:
-                Intent intent10= new Intent(this, SearchFileActivity.class);
+                Intent intent10 = new Intent(this, SearchFileActivity.class);
                 startActivity(intent10);
                 break;
             case 12:
-                Intent intent11= new Intent(this, GuolinListActivity.class);
+                Intent intent11 = new Intent(this, GuolinListActivity.class);
                 startActivity(intent11);
+                break;
+            case 13:
+                Intent intent12 = new Intent(this, FeedlistPracticeActivity.class);
+                startActivity(intent12);
+                break;
+            case 14:
+                Intent intent13 = new Intent(this, BasicUsingActivity.class);
+                startActivity(intent13);
                 break;
             default:
                 break;

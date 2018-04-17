@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#33aaff</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="night_bg">#181818</color>
@@ -49,9 +49,12 @@
     <color name="new_search">#a3a3a3</color>
 
 
-
+    <color name="colorTextAssistant">#888888</color>
 
     <color name="tab_text_color_selected">#ffffff</color>
     <color name="tab_text_color_normal_day">#FBC5C6</color>
 
+
+    //smart
+    <color name="colorDivison">#33aaaaaa</color>
 </resources>

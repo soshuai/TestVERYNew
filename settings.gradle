@@ -1,2 +1,2 @@
-include ':library',':app'
+include ':library',':app',':refresh-layout'
 
