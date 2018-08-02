@@ -55,9 +55,11 @@
         <activity android:name=".PulltoRefreshActivity" />
         <activity android:name=".FileReadWriteActivity" />
         <activity android:name=".SearchFileActivity" />
-        <activity android:name=".GuolinListActivity"></activity>
-        <activity android:name=".FeedlistPracticeActivity"></activity>
-        <activity android:name=".BasicUsingActivity"></activity>
+        <activity android:name=".GuolinListActivity" />
+        <activity android:name=".FeedlistPracticeActivity" />
+        <activity android:name=".BasicUsingActivity" />
+        <activity android:name=".ExpandableListActivity" />
+        <activity android:name=".HorizitalListViewActivity"></activity>
     </application>
 
 </manifest>

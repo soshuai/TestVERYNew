@@ -3,6 +3,7 @@ package com.example.veryw.testveryssssss;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.example.veryw.testveryssssss.adapter.MyAdapter;
 import com.example.veryw.testveryssssss.base.BaseActivity;
+import com.example.veryw.testveryssssss.bean.Person;
 import com.example.veryw.testveryssssss.ftp.bussiness.BussinessUtil;
 import com.example.veryw.testveryssssss.ftp.com.util.ConfigConst;
 import com.example.veryw.testveryssssss.ftp.com.util.IpUtil;
@@ -71,6 +73,13 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
         }).start();
 
 
+//        Person person1=new Person("姜大圣",25,true);
+////        Person person2=person1;
+//        Person person2= (Person) person1.clone();
+//        person2.setName("wangs");
+//        System.out.println(person2.toString());
+//        System.out.println(person1.toString());
+
     }
 
     /**
@@ -112,7 +121,7 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
     }
 
     public String[] getDataList() {
-        strings = new String[15];
+        strings = new String[17];
         for (int i = 0; i < strings.length; i++) {
             strings[i] = "我的第" + (i + 1) + "个Demo";
         }
@@ -131,6 +140,8 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
         strings[12] = "郭霖的下拉刷新";
         strings[13] = "FeedList";
         strings[14] = "BasicUsingActivity";
+        strings[15] = "ExpandableListActivity";
+        strings[16] = "横向recycleview";
         return strings;
     }
 
@@ -216,6 +227,14 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
             case 14:
                 Intent intent13 = new Intent(this, BasicUsingActivity.class);
                 startActivity(intent13);
+                break;
+            case 15:
+                Intent intent14 = new Intent(this, ExpandableListActivity.class);
+                startActivity(intent14);
+
+            case 16:
+                Intent intent15 = new Intent(this, HorizitalListViewActivity.class);
+                startActivity(intent15);
                 break;
             default:
                 break;
