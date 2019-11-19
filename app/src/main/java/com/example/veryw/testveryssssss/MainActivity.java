@@ -18,11 +18,17 @@ import com.example.veryw.testveryssssss.ftp.com.util.ConfigConst;
 import com.example.veryw.testveryssssss.ftp.com.util.IpUtil;
 import com.example.veryw.testveryssssss.ftp.run.GetWhiteListtask;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 import java.util.logging.Logger;
 
 
@@ -111,6 +117,31 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
 
 
     private void initView() {
+//        HashMap<String,Son> map=new HashMap();
+//        Son son=new Son("海海");
+//        son.setFather(new Father(19));
+//        map.put("pp",son);
+//        HashMap<String,Son> map1= (HashMap) map.clone();
+//        map1.get("pp").setName("hha");
+//        Son son1=new Son("洋洋");
+//        map1.put("pp",son1);
+//        Son son1=map1.get("pp");
+//        son1.setName("yang");
+//        son1.getFather().setOld(22);
+//        Log.i("AAAA",map.get("pp").toString());
+//        Log.i("AAAA",map1.get("pp").toString());
+//        Son son=new Son("ooo"));
+//        son1.setName("yang");
+//        son1.getFather().setOld(22);
+        Son son=new Son("海海");
+        son.setFather(new Father(19));
+        Son son1=getClone(son);
+        son1.setName("hhh");
+        son1.setFather(new Father(90));
+        Log.i("AAAA",son.toString());
+        Log.i("AAAA",son1.toString());
+
+
         rv = (RecyclerView) findViewById(R.id.rv);
         linerlayout = (LinearLayout) findViewById(R.id.linerlayout);
         linerlayout.getBackground().mutate().setAlpha(100);
@@ -121,7 +152,7 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
     }
 
     public String[] getDataList() {
-        strings = new String[17];
+        strings = new String[18];
         for (int i = 0; i < strings.length; i++) {
             strings[i] = "我的第" + (i + 1) + "个Demo";
         }
@@ -142,23 +173,25 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
         strings[14] = "BasicUsingActivity";
         strings[15] = "ExpandableListActivity";
         strings[16] = "横向recycleview";
+        strings[17] = "阿里云直播视频";
         return strings;
     }
 
     @Override
     public void onclickHaha(View view, int position) {
+        Intent intent;
         switch (position) {
             case 0:
-                Intent intent0 = new Intent(this, PushNewsDialog.class);
-                startActivity(intent0);
+                intent = new Intent(this, PushNewsDialog.class);
+                startActivity(intent);
                 break;
             case 1:
-                Intent intent1 = new Intent(this, RotateActivity.class);
-                startActivity(intent1);
+                intent = new Intent(this, RotateActivity.class);
+                startActivity(intent);
                 break;
             case 2:
-                Intent intent2 = new Intent(this, GalleryActivity.class);
-                startActivity(intent2);
+                intent = new Intent(this, GalleryActivity.class);
+                startActivity(intent);
                 break;
             case 3:
                 Intent intent3 = new Intent(this, FlyEnterActivity.class);
@@ -229,12 +262,16 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
                 startActivity(intent13);
                 break;
             case 15:
-                Intent intent14 = new Intent(this, ExpandableListActivity.class);
-                startActivity(intent14);
+                intent= new Intent(this, ExpandableListActivity.class);
+                startActivity(intent);
 
             case 16:
-                Intent intent15 = new Intent(this, HorizitalListViewActivity.class);
-                startActivity(intent15);
+                intent = new Intent(this, HorizitalListViewActivity.class);
+                startActivity(intent);
+                break;
+            case 17:
+//                intent = new Intent(this, AliyunPlayerActivity.class);
+//                startActivity(intent);
                 break;
             default:
                 break;
@@ -267,5 +304,25 @@ public class MainActivity extends BaseActivity implements MyAdapter.Recyclerview
     protected void onRestart() {
         super.onRestart();
         Log.i("ssss", "onRestart");
+    }
+
+    //深度复制
+    public static <T extends Serializable> T getClone(T obj){
+        T cloneObj=null;
+        try {
+            //写入字节流
+            ByteArrayOutputStream byteOutputStream=new ByteArrayOutputStream();
+            ObjectOutputStream outputStream=new ObjectOutputStream(byteOutputStream);
+            outputStream.writeObject(obj);
+            outputStream.close();
+            //读出字节流
+            ByteArrayInputStream byteInputStream=new ByteArrayInputStream(byteOutputStream.toByteArray());
+            ObjectInputStream inputStream = new ObjectInputStream(byteInputStream);
+            cloneObj= (T) inputStream.readObject();
+            inputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cloneObj;
     }
 }

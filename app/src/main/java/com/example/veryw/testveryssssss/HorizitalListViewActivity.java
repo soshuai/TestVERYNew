@@ -1,7 +1,7 @@
 package com.example.veryw.testveryssssss;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Handler;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,26 +22,27 @@ public class HorizitalListViewActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private HorizitalAdapter adapter;
     private List<String> data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horizital_list_view);
-        recyclerView= (RecyclerView) findViewById(R.id.recyclerview);
-        data=new ArrayList<>();
-        for (int i = 0;i <20; i++) {
-            data.add("第"+i+"个");
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        data = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            data.add("第" + i + "个");
         }
-        adapter=new HorizitalAdapter();
-        LinearLayoutManager manager=new LinearLayoutManager(this);
+        adapter = new HorizitalAdapter();
+        LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(manager);//创建默认的线性LayoutManager
         recyclerView.setAdapter(adapter);
-        recyclerView.smoothScrollToPosition(10);
         recyclerView.addOnItemTouchListener(new OnRecycleItemClickListener(this, new OnRecycleItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                androidToast("点击了第"+position+"个");
-                recyclerView.smoothScrollToPosition(19);
+                androidToast("点击了第" + position + "个");
+//                recyclerView.smoothScrollToPosition(position);
+//                recyclerView.scrollToPosition(position+5);
             }
 
             @Override
@@ -49,15 +50,21 @@ public class HorizitalListViewActivity extends BaseActivity {
 
             }
         }));
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                recyclerView.scrollToPosition(19);
+            }
+        }, 500);
     }
 
-    class HorizitalAdapter extends RecyclerView.Adapter<HorizitalAdapter.HorizitalViewHolder>{
+    class HorizitalAdapter extends RecyclerView.Adapter<HorizitalAdapter.HorizitalViewHolder> {
 
 
         @Override
         public HorizitalViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            HorizitalViewHolder holder=new HorizitalViewHolder(LayoutInflater.from(HorizitalListViewActivity.this)
-                    .inflate(R.layout.horizital_item,parent,false));
+            HorizitalViewHolder holder = new HorizitalViewHolder(LayoutInflater.from(HorizitalListViewActivity.this)
+                    .inflate(R.layout.horizital_item, parent, false));
             return holder;
         }
 
@@ -71,12 +78,12 @@ public class HorizitalListViewActivity extends BaseActivity {
             return data.size();
         }
 
-        class HorizitalViewHolder extends RecyclerView.ViewHolder{
+        class HorizitalViewHolder extends RecyclerView.ViewHolder {
             TextView tv;
 
             public HorizitalViewHolder(View itemView) {
                 super(itemView);
-                tv= (TextView) itemView.findViewById(R.id.tv);
+                tv = (TextView) itemView.findViewById(R.id.tv);
 
             }
 

@@ -20,7 +20,7 @@ android {
 
     repositories {
         flatDir {
-            dirs 'libs'
+            dirs 'libs' // aar目录
         }
     }
 
@@ -52,8 +52,10 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation project(':refresh-layout')
 
-//    compile 'com.android.support:appcompat-v7:25.3.1'//版本 23以上（必须）
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
-    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    compile 'com.android.support:appcompat-v7:25.3.1'//版本 23以上（必须）
+//    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+//    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+//    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+
 }

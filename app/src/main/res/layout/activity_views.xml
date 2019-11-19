@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,11 +29,10 @@
     <com.example.veryw.testveryssssss.view.LineGridView
         android:id="@+id/linegridview"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/interval_default"
-        android:layout_marginRight="@dimen/interval_default"
         android:layout_marginTop="@dimen/interval_default"
-        android:layout_weight="1"
+        android:layout_marginRight="@dimen/interval_default"
         android:numColumns="4" />
 
     <ProgressBar
@@ -42,4 +42,26 @@
         android:layout_marginTop="@dimen/interval_default"
         android:indeterminateBehavior="repeat"
         android:indeterminateDrawable="@drawable/load" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/interval_default"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/titi" />
+    </android.support.v7.widget.CardView>
+
+    <!--<com.example.veryw.testveryssssss.view.SelectableRoundedImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="@dimen/interval_default"-->
+    <!--android:src="@drawable/titi"-->
+    <!--/>-->
 </LinearLayout>

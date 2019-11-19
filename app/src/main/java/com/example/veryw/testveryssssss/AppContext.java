@@ -11,7 +11,6 @@ import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreater;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.squareup.leakcanary.LeakCanary;
 
 /**
  * 全局应用程序类：用于数据初始化
@@ -45,13 +44,27 @@ public final class AppContext extends Application {
      * 初始化
      */
     public void init() {
+      /*  VcPlayerLog.enableLog();
+        //初始化播放器
+        AliVcMediaPlayer.init(getApplicationContext());
+        ////设置保存密码。此密码如果更换，则之前保存的视频无法播放
+        //AliyunDownloadConfig config = new AliyunDownloadConfig();
+        //config.setSecretImagePath(Environment.getExternalStorageDirectory().getAbsolutePath()+"/aliyun/encryptedApp.dat");
+        ////        config.setDownloadPassword("123456789");
+        ////设置保存路径。请确保有SD卡访问权限。
+        //config.setDownloadDir(Environment.getExternalStorageDirectory().getAbsolutePath()+"/test_save/");
+        ////设置同时下载个数
+        //config.setMaxNums(2);
 
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
-        LeakCanary.install(this);
+        //AliyunDownloadManager.getInstance(this).setDownloadConfig(config);*/
+
+
+//        if (LeakCanary.isInAnalyzerProcess(this)) {
+//            // This process is dedicated to LeakCanary for heap analysis.
+//            // You should not init your app in this process.
+//            return;
+//        }
+//        LeakCanary.install(this);
     }
 
 }

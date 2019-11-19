@@ -11,11 +11,14 @@ import android.widget.Gallery;
 import android.widget.ImageView;
 
 import com.example.veryw.testveryssssss.base.BaseActivity;
+import com.example.veryw.testveryssssss.fancycoverflow.FancyCoverFlow;
+import com.example.veryw.testveryssssss.fancycoverflow.FancyCoverFlowSampleAdapter;
 import com.example.veryw.testveryssssss.util.ImageUtils;
 import com.example.veryw.testveryssssss.view.CustomGallery;
 
 public class GalleryActivity extends BaseActivity {
     private int[] imageResIDs;
+    private FancyCoverFlow fancycoverflow;
 
 
     @Override
@@ -109,6 +112,10 @@ public class GalleryActivity extends BaseActivity {
         };
 
         mGallery.setAdapter(new MyAdapter());
+
+
+        fancycoverflow=(FancyCoverFlow) findViewById(R.id.fancycoverflow);
+        fancycoverflow.setAdapter(new FancyCoverFlowSampleAdapter());
     }
 
 

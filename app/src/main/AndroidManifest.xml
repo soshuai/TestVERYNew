@@ -59,7 +59,7 @@
         <activity android:name=".FeedlistPracticeActivity" />
         <activity android:name=".BasicUsingActivity" />
         <activity android:name=".ExpandableListActivity" />
-        <activity android:name=".HorizitalListViewActivity"></activity>
+        <activity android:name=".HorizitalListViewActivity" />
     </application>
 
 </manifest>

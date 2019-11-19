@@ -1,13 +1,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fcf="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    tools:context=".MainActivity" >
+    android:background="#ffffff"
+    tools:context=".MainActivity">
 
     <com.example.veryw.testveryssssss.view.CustomGallery
         android:id="@+id/customgallery"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="200dp" />
 
+    <com.example.veryw.testveryssssss.fancycoverflow.FancyCoverFlow
+        android:layout_below="@+id/customgallery"
+        android:layout_marginTop="@dimen/interval_large"
+        android:id="@+id/fancycoverflow"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        fcf:maxRotation="45"
+        fcf:unselectedAlpha="0.3"
+        fcf:unselectedSaturation="0.0"
+        fcf:unselectedScale="0.4" />
 </RelativeLayout>

@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.os.Build;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,7 +16,7 @@ import com.example.veryw.testveryssssss.SwipeBackBySystemActivity;
 import butterknife.ButterKnife;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
-public class BaseActivity extends SwipeBackActivity {
+public class BaseActivity extends AppCompatActivity {
     protected BaseActivity      mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class BaseActivity extends SwipeBackActivity {
         ///////////////////////////////////////
         mContext=this;
         ButterKnife.bind(this);
+        Log.i("Goower",getClass().getSimpleName());
     }
 
     @Override
